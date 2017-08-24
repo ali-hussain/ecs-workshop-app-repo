@@ -3,6 +3,7 @@ RUN apt-get update && apt-get install -y python-pip
 RUN pip install --upgrade awscli
 COPY index.html /usr/share/nginx/html/
 COPY mysite.template /etc/nginx/conf.d/
+COPY nginx_wrapper.sh /root/
 # Add a dummy test path to simplify local testing
 ENV SERVICE_PATH testpath
 ENV LINK_SERVER_NAME www.example.com
