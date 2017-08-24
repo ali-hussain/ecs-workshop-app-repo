@@ -9,7 +9,8 @@ phases:
     commands:
       - echo Build started on `date`
       - convert images/scenery.png -resize 50 images/scenery_small.png # Resize image
-      - aws s3 sync images s3://${RESOURCE_BUCKET}${RESOURCE_BUCKET_PATH}/ # Put in S3
+      - echo aws s3 sync images s3://${RESOURCE_BUCKET}/${RESOURCE_BUCKET_PATH}/images/ # Put in S3
+      - aws s3 sync images s3://${RESOURCE_BUCKET}/${RESOURCE_BUCKET_PATH}/images/ # Put in S3
   post_build:
     commands:
       - echo Build completed on `date`
