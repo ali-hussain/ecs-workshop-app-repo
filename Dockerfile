@@ -1,4 +1,4 @@
-FROM nginx:1.10
+FROM nginx:1.13
 RUN apt-get update && apt-get install -y python-pip
 RUN pip install --upgrade awscli
 COPY index.html /usr/share/nginx/html/
